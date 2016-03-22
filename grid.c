@@ -135,9 +135,22 @@ int main(int argc, char *argv[])
       //median = gsl_stats_mean_from_sorted_data(v, 1, celda[cell_ID].Np); //va a calcular la dispersion de velocidades en cada celda    
       
       celda[k].sigmaV = gsl_stats_sd(velocities, 1, celda[k].Np);
+
+      /*
+	calculate (SigmaV(v)/SigmaVo)=Betha=integral (S(v)f(v)dv) 
+	f(v): gaussian velocity distribution
+	S(v):Sommerfeld factor ; 
+	S(v) ~ v^-2 : close to resonance => Betha_c = 1/2*sqrt(SigmaV) 
+	S(v) ~ v^-1 : far of resonance => Betha_f = sqrt(SigmaV/pi)
+      */
       
+
+
       printf("%d %e %f %f %f\n",celda[k].Np, celda[k].sigmaV, celda[k].x, celda[k].y, celda[k].z);
       fprintf(sigma,"%d %16.8e %16.8f %16.8f %16.8f\n",celda[k].Np, celda[k].sigmaV, celda[k].x, celda[k].y, celda[k].z);
+
+
+
 
       free(velocities);
 
