@@ -41,9 +41,10 @@ struct cells
   int cell_ID;
   int Np;
   double sigmaV;
-  /*
+  double Betha_c;
+  double Betha_f;
     
-  */
+  
 };
 
 

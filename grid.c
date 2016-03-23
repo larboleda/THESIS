@@ -144,7 +144,8 @@ int main(int argc, char *argv[])
 	S(v) ~ v^-1 : far of resonance => Betha_f = sqrt(SigmaV/pi)
       */
       
-
+      celda[k].Betha_c = 0.5 * sqrt(celda[K].sigmaV);
+      celda[k].Betha_f = sqrt(celda[k].sigmaV);
 
       printf("%d %e %f %f %f\n",celda[k].Np, celda[k].sigmaV, celda[k].x, celda[k].y, celda[k].z);
       fprintf(sigma,"%d %16.8e %16.8f %16.8f %16.8f\n",celda[k].Np, celda[k].sigmaV, celda[k].x, celda[k].y, celda[k].z);
